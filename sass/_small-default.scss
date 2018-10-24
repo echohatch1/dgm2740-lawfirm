@@ -18,9 +18,21 @@ body {
         border: none;
         margin-top: $gutterdbl;
         margin-bottom: $gutterdbl;
+        color: $fontColor;
     }
+    button:hover {
+        background-color: lighten($secondaryColor, 30%);
+        color: $primaryColor;
+        cursor: pointer;
+}
+
     input {
         border-radius: 2px;
+    }
+    a {
+        text-decoration: none;
+        color: $secondaryColor;
+        font-weight: 500;
     }
 }
 
@@ -29,14 +41,14 @@ body {
 header {
     height:130px;
     max-width: $maxWidth;
-    background-color: $primaryColor;
+    background-color: $altColor;
     position: relative;
     .header-div {
         max-width: $maxWidth;
     }
 	h1, h2 {
-        padding-left: $gutter; 
-        font-weight: $normalWeight;
+        padding-left: $gutterdbl; 
+        font-weight: $boldWeight;
         position: relative;
         bottom: 0;
     } //end both
@@ -70,13 +82,13 @@ header {
 nav {
     max-width: $maxWidth;
     .topnav {
-    background-color: #333;
+    background-color: $primaryColor;
     overflow: hidden;
     margin-bottom: $gutterdbl;
 }
     .topnav a {
-    color: #f2f2f2;
-   float: left;
+    color: $fontColor;
+    float: left;
     display: none;
     color: #f2f2f2;
     text-align: center;
@@ -89,7 +101,7 @@ nav {
     color: black;
 }
     .active {
-    background-color: #4CAF50;
+    background-color: $secondaryColor;
     color: white;
 }
     .topnav .icon {
@@ -118,7 +130,6 @@ nav {
 
 main {
     min-height: 20rem;
-    background-color: $fontColor;
     display: block;
     float: left;
     clear: both;
@@ -162,6 +173,10 @@ main {
                 width: 100%;
             }
         }
+        button {
+            padding-left: $gutterdbl * 2;
+            padding-right: $gutterdbl * 2;
+        }
     }
     
     .space {
@@ -169,11 +184,96 @@ main {
     }
     
     .call-button {
+        
         button {
             width: 100%;
+            height: 60px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-size: 1.75rem;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
         }
     }
     
+       .blog-card {
+        height: 50px;
+        background: $altColor;
+        margin-bottom: $gutterdbl;
+        content: "";
+        display: table;
+        clear: both;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        border-radius: 8px;
+        .blog-text {
+            margin-left: $gutterdbl;
+            margin-right: $gutterdbl;
+               
+           }
+        h2 {
+            font-size: 1rem;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            color: $fontColor;
+            text-align: left;
+        }
+        figure {
+            width: 100%;
+            img {
+                width: 100%;
+                border-radius: 8px 8px 0 0;
+            }
+        }
+           button {
+               width: 100%;
+               margin-bottom: 0;
+               border-radius: 0 0 8px 8px;
+           }
+    }
+    
+    .tip-card {
+        height: 50px;
+        background: $altColor;
+        margin-bottom: $gutterdbl;
+        content: "";
+        display: table;
+        clear: both;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        border-radius: 8px;
+        .blog-text {
+            margin: $gutterdbl;
+               
+           }
+        h2 {
+            font-size: 1rem;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            color: $fontColor;
+            text-align: left;
+        }
+    }
+    
+    .faq-card {
+        height: 50px;
+        background: $altColor;
+        margin-bottom: $gutterdbl;
+        content: "";
+        display: table;
+        clear: both;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        border-radius: 8px;
+        .blog-text {
+            margin: $gutterdbl;
+               
+           }
+        h2 {
+            font-size: 1rem;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            color: $fontColor;
+            text-align: left;
+        }
+        
+    }
     
 	
     
@@ -182,8 +282,10 @@ main {
     
     
 /*-------column layout---------*/
-    .row {clear:both;
-            float: left;
+    .row {
+        clear:both;
+        max-width: $maxWidth;
+
     }
     .column {padding: 0 $gutter;}
     @for $i from 1 through 12 {
@@ -202,22 +304,20 @@ footer {
     display: block;
     float: left;
 	width: 100%;
-	background-color: $secondaryColor;
     margin-top: $gutterdbl;
     div {
         max-width: $maxWidth;
-        
+        text-align: center;
+        i {
+            font-size: 60px;
+            color: $primaryColor;
+        }
+        i:hover {
+            color: $altColor;
+            cursor: pointer;
+        }
     }
-	p {
-		text-align: center;
-		color: $fontColor;
-		padding: .75rem 0;
-		font-size: .9rem;
-	} // end p
-	p a {
-        color: $fontColor;
-        text-decoration: none;
-    }
+
 } // end footer
 
 
